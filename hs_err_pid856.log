@@ -1,0 +1,85 @@
+
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at PC=0x7841205C
+Function=Java_sun_awt_font_GlyphList_discardData+0x662C
+Library=C:\MATLAB7\sys\java\jre\win32\jre1.4.2\bin\fontmanager.dll
+
+Current Java thread:
+	at sun.awt.font.NativeFontWrapper.registerFonts(Native Method)
+	- locked <0x06e05918> (a java.lang.Class)
+	at sun.java2d.SunGraphicsEnvironment.addPathFonts(Unknown Source)
+	at sun.java2d.SunGraphicsEnvironment.registerFonts(Unknown Source)
+	at sun.java2d.SunGraphicsEnvironment.access$200(Unknown Source)
+	at sun.java2d.SunGraphicsEnvironment$2.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.java2d.SunGraphicsEnvironment.loadFonts(Unknown Source)
+	- locked <0x03119f98> (a sun.awt.Win32GraphicsEnvironment)
+	at sun.java2d.SunGraphicsEnvironment.mapFontName(Unknown Source)
+	at java.awt.Font.initializeFont(Unknown Source)
+	at java.awt.Font.<init>(Unknown Source)
+	at sun.awt.windows.WDesktopProperties.setFontProperty(Unknown Source)
+	- locked <0x02c90000> (a sun.awt.windows.WDesktopProperties)
+	at sun.awt.windows.WDesktopProperties.getWindowsParameters(Native Method)
+	at sun.awt.windows.WDesktopProperties.<init>(Unknown Source)
+	at sun.awt.windows.WToolkit.initializeDesktopProperties(Unknown Source)
+	at java.awt.Toolkit.getDesktopProperty(Unknown Source)
+	- locked <0x02c90020> (a sun.awt.windows.WToolkit)
+	at com.mathworks.util.PlatformInfo.<clinit>(PlatformInfo.java:414)
+	at com.mathworks.mwswing.MJStartup.<init>(MJStartup.java:41)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at com.mathworks.util.PostVMInit.perform(PostVMInit.java:139)
+
+Dynamic libraries:
+0x00400000 - 0x00419000 	C:\MATLAB7\bin\win32\meditor.exe
+0x7C920000 - 0x7C9B4000 	C:\WINDOWS\system32\ntdll.dll
+0x7C800000 - 0x7C91F000 	C:\WINDOWS\system32\kernel32.dll
+0x77D10000 - 0x77D9F000 	C:\WINDOWS\system32\USER32.dll
+0x77EF0000 - 0x77F39000 	C:\WINDOWS\system32\GDI32.dll
+0x76300000 - 0x7631D000 	C:\WINDOWS\system32\IMM32.DLL
+0x77DA0000 - 0x77E47000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77E50000 - 0x77EE2000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77FC0000 - 0x77FD1000 	C:\WINDOWS\system32\Secur32.dll
+0x621F0000 - 0x621F9000 	C:\WINDOWS\system32\LPK.DLL
+0x73FA0000 - 0x7400B000 	C:\WINDOWS\system32\USP10.dll
+0x5A410000 - 0x5A447000 	C:\WINDOWS\system32\uxtheme.dll
+0x77BE0000 - 0x77C38000 	C:\WINDOWS\system32\msvcrt.dll
+0x74680000 - 0x746CC000 	C:\WINDOWS\system32\MSCTF.dll
+0x73640000 - 0x7366E000 	C:\WINDOWS\system32\msctfime.ime
+0x76990000 - 0x76ACD000 	C:\WINDOWS\system32\ole32.dll
+0x78100000 - 0x78236000 	c:\matlab7\sys\java\jre\win32\jre1.4.2\bin\client\jvm.dll
+0x76B10000 - 0x76B3A000 	C:\WINDOWS\system32\WINMM.dll
+0x78240000 - 0x78247000 	c:\matlab7\sys\java\jre\win32\jre1.4.2\bin\hpi.dll
+0x78250000 - 0x7825E000 	c:\matlab7\sys\java\jre\win32\jre1.4.2\bin\verify.dll
+0x78260000 - 0x78278000 	c:\matlab7\sys\java\jre\win32\jre1.4.2\bin\java.dll
+0x78280000 - 0x7828D000 	c:\matlab7\sys\java\jre\win32\jre1.4.2\bin\zip.dll
+0x78290000 - 0x7839A000 	C:\MATLAB7\sys\java\jre\win32\jre1.4.2\bin\awt.dll
+0x72F70000 - 0x72F96000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x783E0000 - 0x78430000 	C:\MATLAB7\sys\java\jre\win32\jre1.4.2\bin\fontmanager.dll
+0x76C60000 - 0x76C88000 	C:\WINDOWS\system32\imagehlp.dll
+0x68CC0000 - 0x68D61000 	C:\WINDOWS\system32\DBGHELP.dll
+0x77BD0000 - 0x77BD8000 	C:\WINDOWS\system32\VERSION.dll
+0x76BC0000 - 0x76BCB000 	C:\WINDOWS\system32\PSAPI.DLL
+
+Heap at VM Abort:
+Heap
+ def new generation   total 576K, used 356K [0x02c00000, 0x02ca0000, 0x030e0000)
+  eden space 512K,  57% used [0x02c00000, 0x02c49178, 0x02c80000)
+  from space 64K, 100% used [0x02c90000, 0x02ca0000, 0x02ca0000)
+  to   space 64K,   0% used [0x02c80000, 0x02c80000, 0x02c90000)
+ tenured generation   total 1408K, used 425K [0x030e0000, 0x03240000, 0x06c00000)
+   the space 1408K,  30% used [0x030e0000, 0x0314a6d8, 0x0314a800, 0x03240000)
+ compacting perm gen  total 4096K, used 2514K [0x06c00000, 0x07000000, 0x0ac00000)
+   the space 4096K,  61% used [0x06c00000, 0x06e74b88, 0x06e74c00, 0x07000000)
+
+Local Time = Mon Oct 27 22:30:57 2008
+Elapsed Time = 1
+#
+# The exception above was detected in native code outside the VM
+#
+# Java VM: Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode)
+#
